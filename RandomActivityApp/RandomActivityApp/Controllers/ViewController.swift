@@ -48,6 +48,20 @@ class ViewController: UIViewController {
     }
     
     func configure(){
+        
+        if !NetworkUtils.isConnectedToNetwork() {
+            
+            let alert = UIAlertController(title: "Network Error",
+                                          message: "We were unable to detect an internet connection. Please check yout connection and try again.",
+                                          preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in}))
+            self.present(alert, animated: true, completion: nil)
+            
+            return
+            
+        }
+        
         if isRequesting {
             return
         }
