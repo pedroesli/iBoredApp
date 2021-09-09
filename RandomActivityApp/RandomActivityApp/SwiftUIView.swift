@@ -9,80 +9,43 @@ import SwiftUI
 
 struct SwiftUIView: View {
     
-    @State private var isEducationOn = false
-    @State private var isRecreationalOn = false
-    @State private var isRelaxationOn = false
-    @State private var isCharityOn = false
-    @State private var isCookingOn = false
-    @State private var isMusicOn = false
-    @State private var isBusyworkOn = false
-    @State private var isDIYOn = false
-    @State private var isSocialOn = false
-    
-    var values: [Bool] = UserData.getFilters().getValuesAsBool()
+    @State var values: [Bool] = UserData.getFilters().getValuesAsBool()
+    var filters: [Int: (emoji: String, name: String)] = [
+        0: ("📚", "Education"),
+        1: ("🎳", "Recreational"),
+        2: ("🧘‍♀️", "Relaxation"),
+        3: ("🤲", "Charity"),
+        4: ("🍳", "Cooking"),
+        5: ("🎵", "Music"),
+        6: ("👨‍💻", "Busywork"),
+        7: ("🛠", "DIY"),
+        8: ("👥", "Social"),
+    ]
     
     
     var body: some View{
         let elementPadding: CGFloat = 6
         
         List{
-            Toggle(isOn: $isEducationOn) {
-                Text("📚")
-                    .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-                Text("Education")
+            ForEach(values.indices) { i in
+                Toggle(isOn: $values[i], label: {
+                    let filter = filters[i]!
+                    Text(filter.emoji)
+                        .font(.title)
+                    Text(filter.name)
+                }).padding(.vertical, elementPadding)
+                .onChange(of: values[i], perform: { value in
+                    print("\(i): \(value) array: \(values)")
+                })
             }
-            .padding(.vertical, elementPadding)
-            
-            Toggle(isOn: $isRecreationalOn) {
-                Text("🎳")
-                    .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-                Text("Recreational")
-            }.padding(.vertical, elementPadding)
-            
-            Toggle(isOn: $isRelaxationOn) {
-                Text("🧘‍♀️")
-                    .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-                Text("Relaxation")
-            }.padding(.vertical, elementPadding)
-            
-            Toggle(isOn: $isCharityOn) {
-                Text("🤲")
-                    .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-                Text("Charity")
-            }.padding(.vertical, elementPadding)
-            
-            Toggle(isOn: $isCookingOn) {
-                Text("🍳")
-                    .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-                Text("Cooking")
-            }.padding(.vertical, elementPadding)
-            
-            Toggle(isOn: $isMusicOn) {
-                Text("🎵")
-                    .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-                Text("Music")
-            }.padding(.vertical, elementPadding)
-            
-            Toggle(isOn: $isBusyworkOn) {
-                Text("👨‍💻")
-                    .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-                Text("Busywork")
-            }.padding(.vertical, elementPadding)
-            
-            Toggle(isOn: $isDIYOn) {
-                Text("🛠")
-                    .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-                Text("DIY")
-            }.padding(.vertical, elementPadding)
-            
-            Toggle(isOn: $isSocialOn) {
-                Text("👥")
-                    .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-                Text("Social")
-            }.padding(.vertical, elementPadding)
         }
         .colorScheme(.dark)
         .padding(.horizontal, -5)
+    }
+    
+    func save(){
+        print(values)
+        UserData.saveFilters(filter: TypeFilter(array: values))
     }
 }
 

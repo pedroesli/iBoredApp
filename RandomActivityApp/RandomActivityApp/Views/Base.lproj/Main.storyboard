@@ -224,7 +224,19 @@
                         <viewLayoutGuide key="safeArea" id="9yh-IL-cE0"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="YVm-EH-5oQ"/>
+                    <navigationItem key="navigationItem" id="YVm-EH-5oQ">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="CAb-eV-R5b">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="An4-Uj-SSS">
+                                <rect key="frame" x="288" y="4" width="86" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="saveButtonPressed:" destination="TIu-GW-wMB" eventType="touchUpInside" id="hNB-V6-zgx"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Amz-YA-QNG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -10,11 +10,13 @@ import SwiftUI
 
 class SecondViewController: UIViewController {
 
+    let swiftUIView = SwiftUIView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        let controller = UIHostingController(rootView: SwiftUIView())
+        let controller = UIHostingController(rootView: swiftUIView)
         controller.view.translatesAutoresizingMaskIntoConstraints = false
         self.addChild(controller)
         self.view.addSubview(controller.view)
@@ -26,15 +28,8 @@ class SecondViewController: UIViewController {
         controller.view.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func saveButtonPressed(_ sender: UIButton) {
+        swiftUIView.save()
     }
-    */
-
+    
 }
