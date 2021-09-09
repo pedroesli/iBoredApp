@@ -18,7 +18,8 @@ class SecondViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        saveButton.titleLabel?.highlightedTextColor = UIColor.darkGray
         saveButtonWrapper = SaveButtonWrapper(saveButton, state: .disabled)
         
         swiftUIView = SwiftUIView(saveButton: saveButtonWrapper)
