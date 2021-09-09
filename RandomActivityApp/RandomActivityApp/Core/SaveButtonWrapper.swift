@@ -18,6 +18,7 @@ class SaveButtonWrapper {
     
     init(_ button: UIButton) {
         buttonRef = button
+        buttonRef.titleLabel?.highlightedTextColor = UIColor.darkGray
     }
     
     init(_ button: UIButton, state: States) {

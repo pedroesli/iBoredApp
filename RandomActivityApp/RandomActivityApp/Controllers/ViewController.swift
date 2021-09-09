@@ -38,6 +38,7 @@ class ViewController: UIViewController {
     var isRequesting = false
     let participantEmojis:[String] = ["😉","🙂","😃","😎","😊","😙"]
     let randomActivityButtonEmojis:[String] = ["🤩","🤠","😁","😋","😆","🤗","🙂","😎","😉","😋","😛","😙","😀","😄","😙","😜","😺","😸","😽"]
+    var repeatAnimation: Bool = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +46,7 @@ class ViewController: UIViewController {
         overrideUserInterfaceStyle = .dark
         configure()
         changeEmoji()
+        animate()
     }
     
     func configure(){
@@ -108,6 +110,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func emojiFaceButtonClicked(_ sender: UIButton) {
+        repeatAnimation = false
         changeEmoji()
         animate()
         configure()
@@ -122,11 +125,15 @@ class ViewController: UIViewController {
     func animate(){
         let oldButtonTransform = randomActivityButton.transform
         let newButtonTransform = CGAffineTransform(scaleX: 1.2, y: 1.2)
-        UIView.animate(withDuration: 0.1) {
+        UIView.animate(withDuration: 0.2, delay: 0,options: [.allowUserInteraction]) {
             self.randomActivityButton.transform = newButtonTransform
         } completion: { done in
-            UIView.animate(withDuration: 0.2) {
+            UIView.animate(withDuration: 0.3, delay: 0,options: [.allowUserInteraction]) {
                 self.randomActivityButton.transform = oldButtonTransform
+            } completion: { done in
+                if done && self.repeatAnimation{
+                    self.animate()
+                }
             }
         }
     }
