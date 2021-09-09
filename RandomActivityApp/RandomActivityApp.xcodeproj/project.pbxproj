@@ -96,9 +96,9 @@
 				379D2F3526DD5FB600F698E0 /* Views */,
 				37132A2E26DD4A8600F8D640 /* AppDelegate.swift */,
 				37132A3026DD4A8600F8D640 /* SceneDelegate.swift */,
+				66991DE826EA7D8100D1D681 /* SwiftUIView.swift */,
 				37132A3726DD4A8700F8D640 /* Assets.xcassets */,
 				37132A3C26DD4A8700F8D640 /* Info.plist */,
-				66991DE826EA7D8100D1D681 /* SwiftUIView.swift */,
 			);
 			path = RandomActivityApp;
 			sourceTree = "<group>";

@@ -19,17 +19,19 @@ struct SwiftUIView: View {
     @State private var isDIYOn = false
     @State private var isSocialOn = false
     
+    var values: [Bool] = UserData.getFilters().getValuesAsBool()
+    
+    
     var body: some View{
         let elementPadding: CGFloat = 6
-        //self.body.background(Color.black)
         
-        VStack{
-//            Toggle(isOn: $isEducationOn) {
+        List{
+            Toggle(isOn: $isEducationOn) {
                 Text("📚")
                     .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                 Text("Education")
-//            }
-//            .padding(.vertical, elementPadding)
+            }
+            .padding(.vertical, elementPadding)
             
             Toggle(isOn: $isRecreationalOn) {
                 Text("🎳")
@@ -79,9 +81,8 @@ struct SwiftUIView: View {
                 Text("Social")
             }.padding(.vertical, elementPadding)
         }
-        .background(Color.black)
         .colorScheme(.dark)
-        .padding(.horizontal, 5)
+        .padding(.horizontal, -5)
     }
 }
 

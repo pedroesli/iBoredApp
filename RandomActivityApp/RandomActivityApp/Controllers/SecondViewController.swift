@@ -19,7 +19,7 @@ class SecondViewController: UIViewController {
         self.addChild(controller)
         self.view.addSubview(controller.view)
         controller.didMove(toParent: self)
-
+        
         controller.view.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         controller.view.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         controller.view.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
