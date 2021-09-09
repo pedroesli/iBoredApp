@@ -185,18 +185,16 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="yiJ-Q2-qoE">
-                        <barButtonItem key="rightBarButtonItem" id="R1N-vp-f3L">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="vgt-OD-91X">
-                                <rect key="frame" x="309" y="1" width="65" height="42"/>
+                        <barButtonItem key="rightBarButtonItem" id="AoE-zb-NJD">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="E5W-PC-jYg">
+                                <rect key="frame" x="288" y="5.6666666666666679" width="86" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                 <state key="normal" title="Filters">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="45" scale="default" weight="regular"/>
                                 </state>
                                 <connections>
-                                    <segue destination="TIu-GW-wMB" kind="show" id="0Pp-BD-Y4D"/>
+                                    <segue destination="TIu-GW-wMB" kind="show" id="YVB-xy-sa5"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -224,20 +222,22 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="YVm-EH-5oQ">
-                        <barButtonItem key="rightBarButtonItem" id="CAb-eV-R5b">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="An4-Uj-SSS">
-                                <rect key="frame" x="288" y="4" width="86" height="36"/>
+                        <barButtonItem key="rightBarButtonItem" id="aWE-Uu-fw7">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="t27-HP-TzA">
+                                <rect key="frame" x="288" y="5.6666666666666679" width="86" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
-                                <state key="normal" title="Save"/>
+                                <state key="normal" title="Save">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
-                                    <action selector="saveButtonPressed:" destination="TIu-GW-wMB" eventType="touchUpInside" id="hNB-V6-zgx"/>
+                                    <action selector="saveButtonPressed:" destination="TIu-GW-wMB" eventType="touchUpInside" id="0yd-lJ-H7M"/>
                                 </connections>
                             </button>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="saveButton" destination="An4-Uj-SSS" id="io7-yY-ql8"/>
+                        <outlet property="saveButton" destination="t27-HP-TzA" id="i7v-iI-GYa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Amz-YA-QNG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

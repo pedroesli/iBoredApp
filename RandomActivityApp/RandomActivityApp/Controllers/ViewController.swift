@@ -107,14 +107,6 @@ class ViewController: UIViewController {
         return randomActivityButtonEmojis[randomIndex]
     }
     
-    @IBAction func configurationButtonClicked(_ sender: UIButton) {
-        let sb = UIStoryboard(name: "Configuration", bundle: nil)
-        let vc =  sb.instantiateViewController(identifier: "ConfigurationView") as! ConfigurationViewController
-        
-        //navigationController?.pushViewController(vc, animated: true)
-        show(vc, sender: self)
-    }
-    
     @IBAction func emojiFaceButtonClicked(_ sender: UIButton) {
         changeEmoji()
         animate()
