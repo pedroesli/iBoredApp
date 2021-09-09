@@ -9,6 +9,8 @@ import SwiftUI
 
 struct SwiftUIView: View {
     
+    let saveButtonReference: SaveButtonWrapper!
+    
     @State var values: [Bool] = UserData.getFilters().getValuesAsBool()
     var filters: [Int: (emoji: String, name: String)] = [
         0: ("📚", "Education"),
@@ -22,20 +24,29 @@ struct SwiftUIView: View {
         8: ("👥", "Social"),
     ]
     
+    init(saveButton: SaveButtonWrapper!) {
+        saveButtonReference = saveButton
+    }
     
     var body: some View{
         let elementPadding: CGFloat = 6
         
         List{
             ForEach(values.indices) { i in
+                
                 Toggle(isOn: $values[i], label: {
                     let filter = filters[i]!
                     Text(filter.emoji)
                         .font(.title)
                     Text(filter.name)
-                }).padding(.vertical, elementPadding)
+                    
+                })
+                .padding(.vertical, elementPadding)
                 .onChange(of: values[i], perform: { value in
-                    print("\(i): \(value) array: \(values)")
+                    
+                    saveButtonReference.enable()
+                    UserData.changeFilter(on: i, to: value)
+                    
                 })
             }
         }
@@ -43,15 +54,11 @@ struct SwiftUIView: View {
         .padding(.horizontal, -5)
     }
     
-    func save(){
-        print(values)
-        UserData.saveFilters(filter: TypeFilter(array: values))
-    }
 }
 
 struct SwiftUIView_Preview: PreviewProvider {
     static var previews: some View{
-        SwiftUIView()
+        SwiftUIView(saveButton: nil)
     }
 }
 

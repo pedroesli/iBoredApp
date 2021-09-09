@@ -10,12 +10,19 @@ import SwiftUI
 
 class SecondViewController: UIViewController {
 
-    let swiftUIView = SwiftUIView()
+    @IBOutlet weak var saveButton: UIButton!
+    
+    public var saveButtonWrapper: SaveButtonWrapper!
+    
+    private var swiftUIView: SwiftUIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        saveButtonWrapper = SaveButtonWrapper(saveButton, state: .disabled)
+        
+        swiftUIView = SwiftUIView(saveButton: saveButtonWrapper)
+        
         let controller = UIHostingController(rootView: swiftUIView)
         controller.view.translatesAutoresizingMaskIntoConstraints = false
         self.addChild(controller)
@@ -26,10 +33,12 @@ class SecondViewController: UIViewController {
         controller.view.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         controller.view.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         controller.view.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        
     }
     
     @IBAction func saveButtonPressed(_ sender: UIButton) {
-        swiftUIView.save()
+        saveButtonWrapper.disable()
+        UserData.saveFilters()
     }
     
 }

@@ -22,6 +22,7 @@
 		66BED6885669558481AA7E90 /* Pods_RandomActivityApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8937E28F814EED459938C09 /* Pods_RandomActivityApp.framework */; };
 		7B6C628726DEC187008858FF /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6C628626DEC187008858FF /* UserData.swift */; };
 		7B78E8C326E009D7003CDDA2 /* TypeFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B78E8C226E009D7003CDDA2 /* TypeFilter.swift */; };
+		7BCC710D26EAB97300124F00 /* SaveButtonWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCC710C26EAB97300124F00 /* SaveButtonWrapper.swift */; };
 		7BD33B1426EA7E310086F3FD /* NetworkUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD33B1326EA7E310086F3FD /* NetworkUtils.swift */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +44,7 @@
 		66A1A63D26EA7F4000D45756 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		7B6C628626DEC187008858FF /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		7B78E8C226E009D7003CDDA2 /* TypeFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeFilter.swift; sourceTree = "<group>"; };
+		7BCC710C26EAB97300124F00 /* SaveButtonWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveButtonWrapper.swift; sourceTree = "<group>"; };
 		7BD33B1326EA7E310086F3FD /* NetworkUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkUtils.swift; sourceTree = "<group>"; };
 		E8937E28F814EED459938C09 /* Pods_RandomActivityApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RandomActivityApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4E2E10CDFEDCCB70F4BCE59 /* Pods-RandomActivityApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RandomActivityApp.debug.xcconfig"; path = "Target Support Files/Pods-RandomActivityApp/Pods-RandomActivityApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 				7B6C628626DEC187008858FF /* UserData.swift */,
 				7B78E8C226E009D7003CDDA2 /* TypeFilter.swift */,
 				7BD33B1326EA7E310086F3FD /* NetworkUtils.swift */,
+				7BCC710C26EAB97300124F00 /* SaveButtonWrapper.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -279,6 +282,7 @@
 				7B78E8C326E009D7003CDDA2 /* TypeFilter.swift in Sources */,
 				379D2F3A26DD7B3800F698E0 /* ConfigurationViewController.swift in Sources */,
 				7BD33B1426EA7E310086F3FD /* NetworkUtils.swift in Sources */,
+				7BCC710D26EAB97300124F00 /* SaveButtonWrapper.swift in Sources */,
 				37132A2F26DD4A8600F8D640 /* AppDelegate.swift in Sources */,
 				3744131726DFEEBE00469E13 /* Activity.swift in Sources */,
 				7B6C628726DEC187008858FF /* UserData.swift in Sources */,

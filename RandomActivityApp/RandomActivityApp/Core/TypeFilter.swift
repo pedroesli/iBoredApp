@@ -19,6 +19,12 @@ public struct TypeFilter {
     
     init() {}
     
+    public mutating func changeValue(on index: Int, to value: Bool) {
+        if index >= 0 && index <= values.count {
+            values[index] = value
+        }
+    }
+    
     public func getValuesAsBool() -> [Bool] { values }
     
     public func getValuesAsTuple() -> (Education: Bool,
