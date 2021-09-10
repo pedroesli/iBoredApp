@@ -95,7 +95,7 @@ class ViewController: UIViewController {
         }
         
         var pa = ""
-        for _ in 0...participants{
+        for _ in 0..<participants{
             let randomIndex = Int.random(in: 0..<participantEmojis.count)
             
             pa = pa + participantEmojis[randomIndex]
