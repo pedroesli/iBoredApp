@@ -1,1 +1,1 @@
-# iBoredApp
+# iBored! App
